@@ -11,3 +11,5 @@ Z
 *tests/censorship-resistant-posting.test.ts,b/b/bbbd2e8ad7286d9e77159eeee9f6b922dbcf04eb
 M
 tests/content-storage.test.ts,8/8/884f3a1aead83b591ed73513ee5fc6f8eabeebe8
+R
+"tests/content-monetization.test.ts,1/8/18b13e6a4a6bd70f88a78b19cbfe0215050899b9
