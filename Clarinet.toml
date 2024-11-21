@@ -1,0 +1,29 @@
+[project]
+name = 'SocialMediaDApp'
+description = ''
+authors = []
+telemetry = true
+cache_dir = './.cache'
+requirements = []
+[contracts.censorship-resistant-posting]
+path = 'contracts/censorship-resistant-posting.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.content-monetization]
+path = 'contracts/content-monetization.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.content-storage]
+path = 'contracts/content-storage.clar'
+clarity_version = 2
+epoch = 2.5
+[repl.analysis]
+passes = ['check_checker']
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
