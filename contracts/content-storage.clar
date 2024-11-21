@@ -1,8 +1,4 @@
-;; contracts/content-storage.clar
-
 ;; Define constants
-(define-constant contract-owner tx-sender)
-(define-constant err-owner-only (err u100))
 (define-constant err-not-found (err u101))
 (define-constant err-unauthorized (err u102))
 
@@ -16,10 +12,6 @@
   timestamp: uint,
   ipfs-hash: (string-ascii 46)
 })
-
-;; Private functions
-(define-private (is-owner)
-  (is-eq tx-sender contract-owner))
 
 ;; Public functions
 
@@ -55,18 +47,6 @@
   )
 )
 
-;; Delete a post
-(define-public (delete-post (post-id uint))
-  (let
-    (
-      (post (unwrap! (map-get? posts post-id) err-not-found))
-    )
-    (asserts! (is-eq (get author post) tx-sender) err-unauthorized)
-    (map-delete posts post-id)
-    (ok true)
-  )
-)
-
 ;; Read-only functions
 
 (define-read-only (get-post (post-id uint))
@@ -74,3 +54,4 @@
 
 (define-read-only (get-latest-post-id)
   (- (var-get next-post-id) u1))
+
